@@ -10,8 +10,26 @@ function App() {
   let [cat, setCat] = useState("All");
 
   const xa = (e) => {
-    /* console.log(e.target.textContent); */
-    setCat(e.target.textContent);
+    if (e.target.textContent !== "AllWebsitesFlayersBusiness Cards") {
+
+      let carts = document.querySelector('.contend').childNodes;
+      setCat(e.target.textContent);
+      let selected = e.target.textContent;
+      console.log(selected);
+
+
+
+      carts.forEach (e => {
+        if (e.getAttribute('category') !== selected) {
+          e.classList.add("showOff");
+        } else {
+          e.classList.remove("showOff");
+        }
+        if (selected === "All") {e.classList.remove("showOff");}
+      })
+    }
+    
+    
   }
 
   return (
@@ -23,7 +41,7 @@ function App() {
         <Filter filterName = "Business Cards"/>
       </div>
       <div className="contend">
-      <Portfolio items = {items} category = {cat}/>
+      <Portfolio items = {items}/>
       </div>
     </div>
   );

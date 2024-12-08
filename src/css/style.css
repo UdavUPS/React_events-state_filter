@@ -45,3 +45,7 @@
 .pBox__itme {
   width: 100%;  
 }
+
+.showOff {
+  display: none;
+}
