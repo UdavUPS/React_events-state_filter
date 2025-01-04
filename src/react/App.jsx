@@ -1,21 +1,17 @@
 import { items } from './object.js';
 import { Filter } from './Filter.jsx';
 import { Portfolio } from './Portfolio.jsx';
-import { useState } from 'react';
 
 
 
 
 function App() {
-  let [cat, setCat] = useState("All");
 
   const xa = (e) => {
     if (e.target.textContent !== "AllWebsitesFlayersBusiness Cards") {
 
       let carts = document.querySelector('.contend').childNodes;
-      setCat(e.target.textContent);
       let selected = e.target.textContent;
-      console.log(selected);
 
 
 

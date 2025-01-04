@@ -1,6 +1,4 @@
-/* @import url(https://fonts.googleapis.com/css?family=Muli:400,300italic,300,400italic); */
 .root {
-  /* border: 1px solid black; */
   width: 950px;
   margin: auto;
 }
@@ -15,13 +13,11 @@
   margin-right: 5px;
   margin-top: 5px;
   margin-bottom: 15px;
-  /* min-width: 50px; */
   text-align: center;
   cursor: pointer;
 }
 
 .fItem:hover {
-  /* border: 0px; */
   color: #ffffff;
   background-color: #413f3f;
 }
@@ -33,9 +29,7 @@
   flex-wrap: wrap;
 }
 
-/* .pBox:first-child {
-  align-self: stretch;
-} */
+
 
 .pBox {
   width: calc(33.33% - 10px);
