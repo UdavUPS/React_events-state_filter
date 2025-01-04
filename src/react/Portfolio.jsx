@@ -1,23 +1,16 @@
 export function Portfolio({items}) {
 
 
-
-
-    let elem =[];
-
-    items.forEach(e=> {
-        let k = Math.random();
-            elem.push (
-                <div className="pBox" category={e.category} key={k}>
-                    <img className="pBox__itme" src={e.img} alt="" />
-                </div>
-            )  
-    });
-
-
     return (
         <>
-        {elem}
+        {items.map( (item) => {
+            return (
+            <div className="pBox" category={item.category} key={Math.random()}>
+                <img className="pBox__itme" src={item.img} alt="" />
+            </div>
+            );
+
+        })}
         </>
     )
     
