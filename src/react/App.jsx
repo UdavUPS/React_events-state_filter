@@ -1,43 +1,36 @@
 import { items } from './object.js';
 import { Filter } from './Filter.jsx';
 import { Portfolio } from './Portfolio.jsx';
+import { useState } from 'react';
 
 
 
 
 function App() {
-
-  const xa = (e) => {
-    if (e.target.textContent !== "AllWebsitesFlayersBusiness Cards") {
-
-      let carts = document.querySelector('.contend').childNodes;
-      let selected = e.target.textContent;
+  const [filterValue, changeValue] = useState ('All');
+ 
 
 
-
-      carts.forEach (e => {
-        if (e.getAttribute('category') !== selected) {
-          e.classList.add("showOff");
-        } else {
-          e.classList.remove("showOff");
-        }
-        if (selected === "All") {e.classList.remove("showOff");}
-      })
-    }
-    
-    
-  }
+function setFilterValue(newFilter) {
+        changeValue(newFilter);
+      }
+ 
 
   return (
     <div>
-      <div onClick={xa} className='filterBox'>
-        <Filter  filterName = "All"  />
-        <Filter filterName = "Websites"/>
-        <Filter filterName = "Flayers"/>
-        <Filter filterName = "Business Cards"/>
+      <div className='filterBox'>
+        <Filter  filterName = "All" onClick= {() => setFilterValue("All")} />
+        <Filter filterName = "Websites" onClick= {() => setFilterValue("Websites")}/>
+        <Filter filterName = "Flayers" onClick= {() => setFilterValue("Flayers")}/>
+        <Filter filterName = "Business Cards" onClick= {() => setFilterValue("Business Cards")}/>
       </div>
       <div className="contend">
-      <Portfolio items = {items}/>
+      <Portfolio items = {items.filter( (elem) => {
+        if (filterValue === "All") {
+          return elem
+        }
+          return elem.category === filterValue
+      })}/>
       </div>
     </div>
   );

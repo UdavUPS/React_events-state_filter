@@ -1,10 +1,9 @@
-export function Filter({filterName}) {
-
+export function Filter({filterName, onClick}) {
 
 
 
     return (
-        <div  className="fItem">{filterName}</div>
+        <div  className="fItem" onClick = {onClick} >{filterName}</div>
     )
     
 }
