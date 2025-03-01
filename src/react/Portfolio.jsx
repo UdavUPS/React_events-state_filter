@@ -1,7 +1,6 @@
 export function Portfolio({items}) {
 
 
-
     return (
         <>
         {items.map( (item) => {
@@ -14,5 +13,4 @@ export function Portfolio({items}) {
         })}
         </>
     )
-    
 }

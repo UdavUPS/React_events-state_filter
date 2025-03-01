@@ -22,14 +22,11 @@
   background-color: #413f3f;
 }
 
-
 .contend {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
-
-
 
 .pBox {
   width: calc(33.33% - 10px);

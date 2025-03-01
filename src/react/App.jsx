@@ -4,14 +4,11 @@ import { Portfolio } from './Portfolio.jsx';
 import { useState } from 'react';
 
 
-
-
 function App() {
   const [filterValue, changeValue] = useState ('All');
  
 
-
-function setFilterValue(newFilter) {
+ function setFilterValue(newFilter) {
         changeValue(newFilter);
       }
  
@@ -35,7 +32,6 @@ function setFilterValue(newFilter) {
     </div>
   );
 }
-
 
 
 export default App;
